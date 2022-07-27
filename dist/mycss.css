@@ -3,7 +3,10 @@ html{
 	font-family: 'Roboto';
 		}
 body{
-
+ background-color: #f4f4f4;
+}
+nav{
+	background-color: #fff;
 }
 .container{
 	display: flex;
@@ -36,5 +39,8 @@ body{
 	outline: none;
 	background-color: transparent;
 	border-bottom: 1px solid green;
+}
+.main-article{
+	width: 60%;
 }
 
