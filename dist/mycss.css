@@ -3,11 +3,8 @@ html{
 	font-family: 'Roboto';
 		}
 body{
-	padding-left: 30px;
-	padding-right: 30px;
+
 }
-
-
 .container{
 	display: flex;
 	flex-direction: row;
@@ -33,7 +30,6 @@ body{
 	flex-direction: row;
 	justify-content: flex-start;
 }
-
 
 .container input{
 	border-style: none;
