@@ -8,6 +8,9 @@ let side_articles = "";
 
 async function getAllArticles() {
 
+    grid_container1.innerHTML = "grid_articles";
+    grid_container2.innerHTML = "grid_bottom_articles";
+    side_box.innerHTML = "side_articles";
     try {
         const response = await fetch("http://localhost:3001/v2/api/news");
         const articles = await response.json();
@@ -23,12 +26,18 @@ async function getAllArticles() {
                 counter++;
                 grid_articles +=
                     `
-                <div class="flex flex-col bg-white p-2 shadow text-sky-600"><!-- main Article -->
+                <div class="flex flex-col bg-white p-4 shadow text-sky-600"><!-- main Article -->
                     <div class="flex flex-col ">
-                        <span class="font-bold text-md">${element.title}</span>
-                        
+                        <span class="font-bold text-md mb-2 border-sky-400 border-solid border-l-4 px-1">${element.title}</span>
                     </div>
+                    
                     <img class="" src="${element.urlToImage}" alt="">
+
+                    <div class="mt-2">
+                        <span class="text-sm font-bold">Author: </span>
+                        <span class="text-sm">${element.author.firstname + ' ' + element.author.lastname}</span>
+                    </div>
+
                 </div>
                 `;
             } else if (counter < 11) {
@@ -78,9 +87,4 @@ async function getAllArticles() {
         console.log(error);
     }
 }
-
-
-
-
-
 getAllArticles(); // to fill the first grid box
